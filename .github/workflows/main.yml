@@ -31,11 +31,12 @@ jobs:
 
     - name: unzip
       run: |
+        sudo unzip -P $password /masterpath/rclone.zip -d /home/runner/.config/rclone
 #        sudo unzip $masterpath/fclone.zip -d /user/bin
 #        sudo chmod 0755 /user/bin/fclone
 #        sudo unzip -P $password $masterpath/sa.zip -d /
-        sudo unzip -P $password $/rclone.zip -d /home/runner/.config/rclone/
-   
+#        sudo unzip -P $password /masterpath/rclone.zip -d /home/runner/.config/rclone
+ 
     - name: SSH connection to Actions
       uses: hunter-sn/debugger-action@master
       if: env.SSH_ACTIONS == 'true'
