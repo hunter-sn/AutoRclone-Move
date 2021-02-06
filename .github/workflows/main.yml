@@ -1,6 +1,7 @@
 name: Auto Rclone Move
 
 on:
+  repository_dispatch:
   watch:
     types: [started]
   release:
