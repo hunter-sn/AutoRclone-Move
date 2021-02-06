@@ -29,9 +29,8 @@ jobs:
         sudo -E apt-get -qq install unzip curl wget git
         sudo curl https://rclone.org/install.sh | sudo bash
 
-    - name: unzip
-      run: |
-        sudo unzip -P $password /masterpath/rclone.zip -d /home/runner/.config/rclone
+#    - name: unzip
+#      run: |
 #        sudo unzip $masterpath/fclone.zip -d /user/bin
 #        sudo chmod 0755 /user/bin/fclone
 #        sudo unzip -P $password $masterpath/sa.zip -d /
