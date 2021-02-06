@@ -27,7 +27,7 @@ jobs:
       run: |
         sudo -E apt-get -qq install unzip curl wget git
         sudo curl https://rclone.org/install.sh | sudo bash
-        sudo wget -qO- https://github.com/mawaya/rclone/releases/download/fclone-v0.3.1/fclone-v0.3.1-linux-amd64.zip | unzip -o -j fclone*.zip -d /usr/bin | rm fclone*.zip | sudo chmod 0755 /usr/bin/fclone
+        sudo wget -qO- https://github.com/mawaya/rclone/releases/download/fclone-v0.3.1/fclone-v0.3.1-linux-amd64.zip | unzip -o -j fclone*.zip -d /usr/bin/ | rm fclone*.zip | sudo chmod 0755 /usr/bin/fclone
 
     - name: unzip
       run: |
