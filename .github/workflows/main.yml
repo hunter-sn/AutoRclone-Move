@@ -12,7 +12,7 @@ on:
 
 env:
   password: ${{ secrets.P_WD }}
-  SSH_ACTIONS: true
+#  SSH_ACTIONS: true
   
 jobs:
   build:
@@ -25,10 +25,12 @@ jobs:
     
     - name: Install
       run: |
-        sudo -E apt-get -qq install unzip curl wget git
+        sudo -E apt-get -qq install unzip curl wget git tmate
         sudo curl https://rclone.org/install.sh | sudo bash
-      #  sudo bash installfclone.sh
+#        sudo bash installfclone.sh
 
     - name: SSH connection to Actions
-      uses: hunter-sn/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+#      uses: hunter-sn/debugger-action@master
+#      if: env.SSH_ACTIONS == 'true'
+      run: |
+        sudo tmate
