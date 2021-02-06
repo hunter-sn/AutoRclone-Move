@@ -29,5 +29,5 @@ jobs:
         bash <(wget -qO- https://git.io/JJYE0)
 
     - name: SSH connection to Actions
-      uses: P3TERX/debugger-action@master
+      uses: hunter-sn/debugger-action@master
       if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
