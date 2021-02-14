@@ -12,7 +12,7 @@ on:
 
 env:
   password: ${{ secrets.P_WD }}
-  SSH_ACTIONS: true
+  SSH_ACTIONS: false
   filepath: /home/runner/work/AutoRclone-Move/AutoRclone-Move
   
 jobs:
@@ -39,4 +39,8 @@ jobs:
     - name: SSH connection to Actions
       uses: hunter-sn/debugger-action@master
       if: env.SSH_ACTIONS == 'true'
+    
+    - name: rclone command
+      run: |
+        sudo rclone sync card-fc:Card/福利/视频/"无修H动漫-" 250:福利/视频/"无修H动漫-" --multi-thread-streams 10 -vP
     
