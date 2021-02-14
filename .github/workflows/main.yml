@@ -2,6 +2,12 @@ name: Auto Rclone Move
 
 on:
   repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
   watch:
     types: [started]
   release:
@@ -37,10 +43,10 @@ jobs:
         sudo unzip -P $password $filepath/rclone.zip -d /home/runner/.config/rclone
  
     - name: SSH connection to Actions
-      uses: hunter-sn/debugger-action@master
-      if: env.SSH_ACTIONS == 'true'
+      uses: P3TERX/ssh2actions@v1.0.0    #hunter-sn/debugger-action@master
+      if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')    #env.SSH_ACTIONS == 'true'
     
     - name: rclone command
       run: |
-        sudo rclone sync card-fc:Card/福利/视频/"无修H动漫-" 250:福利/视频/"无修H动漫-" --multi-thread-streams 10 -vP
+        sudo rclone sync card-fc:Card/福利/写真套图 250:福利/写真套图 --multi-thread-streams 10 -vP
     
