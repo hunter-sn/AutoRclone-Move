@@ -48,5 +48,5 @@ jobs:
     
     - name: rclone command
       run: |
-        sudo rclone sync card-gr:Card/福利/写真套图 250:福利/写真套图 --transfers 64 --checkers 64 -P
+        sudo rclone sync card-gr:Card/福利/写真套图 250:福利/写真套图 --transfers 32 --checkers 64
     
